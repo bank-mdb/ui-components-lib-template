@@ -1,5 +1,10 @@
 module.exports = {
-  extends: ["plugin:prettier/recommended"],
+  extends: [
+    "plugin:vue/essential",
+    "plugin:prettier/recommended",
+    "eslint:recommended"
+  ],
+
   parserOptions: {
     sourceType: "module"
   }

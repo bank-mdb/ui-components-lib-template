@@ -1,0 +1,19 @@
+[
+  [
+    "/main/finance/apply/detail",
+    [
+      {
+        "name": "A",
+        "path": "/main/finance/apply/list"
+      },
+      {
+        "name": "B",
+        "path": "/main/finance/apply/list"
+      },
+      {
+        "name": "C",
+        "path": "/main/finance/apply/list"
+      }
+    ]
+  ]
+]
