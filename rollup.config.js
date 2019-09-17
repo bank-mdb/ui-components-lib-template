@@ -1,9 +1,12 @@
+import json from "rollup-plugin-json";
 import babel from "rollup-plugin-babel";
 import vue from "rollup-plugin-vue";
 import resolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
 import { terser } from "rollup-plugin-terser";
 import postcss from "rollup-plugin-postcss";
+import bundleSize from "rollup-plugin-filesize";
+import pkg from "./package.json";
 
 export default {
   input: "./src/index.js",
@@ -25,19 +28,18 @@ export default {
       globals: {
         vue: "Vue"
       },
-      external: ["vue"]
+      external: Object.keys(pkg.dependencies)
     }
   ],
   plugins: [
-    vue(),
-    postcss(),
     resolve(),
     commonjs(),
-    resolve(),
+    vue(),
+    postcss(),
     babel({
       exclude: "node_modules/**"
     }),
-    commonjs(),
+    json(),
     terser({
       output: {
         ascii_only: true // 仅输出ascii字符
@@ -45,6 +47,7 @@ export default {
       compress: {
         pure_funcs: ["console.log"] // 去掉console.log函数
       }
-    })
+    }),
+    bundleSize()
   ]
 };

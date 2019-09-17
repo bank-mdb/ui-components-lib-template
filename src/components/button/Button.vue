@@ -1,5 +1,6 @@
 <template>
-  <div class="button">xxxx</div>
+  <!-- <div class="button">xxxx</div> -->
+  <el-button type="primary">示例按钮</el-button>
 </template>
 
 <script>
@@ -8,7 +9,4 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-button {
-  color: lightcoral;
-}
 </style>

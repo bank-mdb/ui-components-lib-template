@@ -25,10 +25,12 @@
 
 <script>
     import Vue from 'vue'
+    import ElementUI from 'element-ui';
+    import 'element-ui/lib/theme-chalk/index.css';
     import MdbUI from '@src'
     import '@/scss/docs.scss'
     Vue.use(MdbUI)
-
+    Vue.use(ElementUI);
     export default {
         data () {
             return {
